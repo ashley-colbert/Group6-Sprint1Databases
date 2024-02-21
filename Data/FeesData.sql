@@ -1,0 +1,2 @@
+insert into "Fees" (fee_id, fee_name, description, price) values (1, 'Family', 'Family membership fee', 25);
+insert into "Fees" (fee_id, fee_name, description, price) values (2, 'Standard', 'Individual membership fee', 15);
