@@ -23,3 +23,7 @@ JOIN "Instructor" ON  "Maintenance".instructor_id = "Instructor".instructor_id;
 SELECT "Instructor".name, "Instructor".contact_info, "Address".*
 FROM "Address"
 Join "Instructor" ON "Address".address_id = "Instructor".address_id;
+
+-- This select statement will group the types of equipment and do a count of each type, then return the count and equipment name.
+
+SELECT COUNT(equip_name), equip_name FROM "Equipment" GROUP BY equip_name
