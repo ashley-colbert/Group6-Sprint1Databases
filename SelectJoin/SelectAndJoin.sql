@@ -23,3 +23,31 @@ JOIN "Instructor" ON  "Maintenance".instructor_id = "Instructor".instructor_id;
 SELECT "Instructor".name, "Instructor".contact_info, "Address".*
 FROM "Address"
 Join "Instructor" ON "Address".address_id = "Instructor".address_id;
+
+-- This select statement will group the types of equipment and do a count of each type, then return the count and equipment name.
+
+SELECT COUNT(equip_name), equip_name FROM "Equipment" GROUP BY equip_name
+
+--This will sort all the equipment and list each item by its status.
+
+SELECT * FROM "Equipment" ORDER BY status;
+
+
+SELECT equipment_id FROM "Maintenance";
+SELECT schedule_date FROM "Maintenance";
+
+SELECT m.*, i.name FROM
+"Maintenance" m
+INNER JOIN "Instructor" i ON m.instructor_id = i.instructor_id;
+
+SELECT m.*, mem.contact_details FROM
+"Maintenance" m
+INNER JOIN "Member" mem ON member_id = mem.member_id;
+
+SELECT m.*, fc.name
+FROM "Maintenance" m
+INNER JOIN "FitnessClass" fc ON m.equipment_id = fc.class_id;
+
+SELECT m.*, rp.reward_amount
+FROM "Maintenance" m
+INNER JOIN "RewardsProgram" rp ON m.equipment_id = rp.member_id
